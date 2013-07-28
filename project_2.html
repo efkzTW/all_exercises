@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<link rel='stylesheet' href='project.css'/>
+	<script rel='script' src='js/d3.v3.js'></script>
+</head>
+<body>
+	<div id='page-wrapper'>
+		<div id='content'>
+			<div id='header'>
+				<div id='project-name'>
+					Project 2: Simple Output Using Javascript
+				</div>
+				<div id='detail'>
+					<p>This is an adaptation of a simple exercise based on Interactive Data Visualization e-book using.</p>
+				</div>
+			</div>
+			<div id='main'>
+				<script rel='javascript'>
+					var dataset = [5, 10, 15, 20, 25, 30];
+					d3.select("div #main").selectAll("div")
+						.data(dataset)
+						.enter()
+						.append("div")
+						.text(function(d) {
+							return "Counting up to " + d;
+						});
+				</script>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
