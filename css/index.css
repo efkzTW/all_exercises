@@ -1,1 +1,59 @@
 /* index.html stylesheet */
+
+/* global styles */
+
+* {
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+
+h1 h2 h3 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	width: 100%;
+	font-size: 1.25em;
+	margin: 0;
+	border: 0;
+	color: #030509;
+	background-color: #fbfbf5;
+	
+}
+
+li {
+	list-style-type: none;
+}
+
+/* link styles */
+
+#intro a {
+	color: #8bb4d8;
+}
+
+a:link {
+
+}
+
+#proj-section a {
+	text-decoration: none;
+}
+
+#proj-section a:hover{
+	color: #9d3634;
+}
+
+/* content ids */
+
+#site-wrapper {
+	width: 960px;
+}
+
+#content-section {
+	margin: 20px 10px;
+}
+
+#proj-section {
+	font-size: .8em;
+}
+
+/* content classes */
