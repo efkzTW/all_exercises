@@ -11,13 +11,17 @@ h1 h2 h3 {
 }
 
 body {
-	width: 100%;
 	font-size: 1.25em;
 	margin: 0;
 	border: 0;
 	color: #030509;
 	background-color: #fbfbf5;
 	
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
 }
 
 li {
@@ -45,15 +49,17 @@ a:link {
 /* content ids */
 
 #site-wrapper {
-	width: 960px;
+	max-width: 940px;
+	min-width: 720px;
+	margin: 10px auto;
 }
 
 #content-section {
-	margin: 20px 10px;
+	margin: 0px;
 }
 
 #proj-section {
-	font-size: .8em;
+	font-size: .9em;
 }
 
 /* content classes */
