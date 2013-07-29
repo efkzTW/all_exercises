@@ -20,7 +20,7 @@ body {
 }
 
 ul {
-	margin: 0px;
+	margin: 5px 0px 15px 20px;
 	padding: 0px;
 }
 
@@ -39,16 +39,16 @@ li {
 	text-decoration: underline;
 }
 
-#proj-section a {
+#ex-section a {
 	text-decoration: none;
 	color: #030509;
 }
 
-#proj-section a:visited{
+#ex-section a:visited{
 	
 }
 
-#proj-section a:hover{
+#ex-section a:hover{
 	color: #ffa500;
 }
 
@@ -69,3 +69,7 @@ li {
 }
 
 /* content classes */
+
+.subhead {
+	margin-left: 10px;
+}
