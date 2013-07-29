@@ -20,7 +20,7 @@ body {
 }
 
 ul {
-	margin: 5px 0px 15px 20px;
+	margin: 2px 0px 15px 20px;
 	padding: 0px;
 }
 
@@ -72,4 +72,9 @@ li {
 
 .subhead {
 	margin-left: 10px;
+}
+
+.header {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: .9em;
 }
