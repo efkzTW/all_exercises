@@ -32,18 +32,24 @@ li {
 
 #intro a {
 	color: #8bb4d8;
+	text-decoration: none;
 }
 
-a:link {
-
+#intro a:hover {
+	text-decoration: underline;
 }
 
 #proj-section a {
 	text-decoration: none;
+	color: #030509;
+}
+
+#proj-section a:visited{
+	
 }
 
 #proj-section a:hover{
-	color: #9d3634;
+	color: #ffa500;
 }
 
 /* content ids */
