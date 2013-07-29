@@ -3,33 +3,38 @@
 <head>
 	<meta charset='utf-8' />
 	<link rel='stylesheet' href='css/project_main.css'/>
-	<script rel='script' src='js/d3.v3.js'></script>
-	<title>Project 2::Simple Data Output</title>
+	<script type='text/javascript' src='js/d3.v3.js'></script>
+	<title>Project 2: Simple Data Output</title>
 </head>
 <body>
-	<div id='page-wrapper'>
-		<div id='content'>
-			<div id='header'>
-				<div id='project-name'>
+	<div id="page-wrapper">
+		<div id="content">
+			<div id="header">
+				<div id="project-name">
 					Project 2: Simple Data Output Using Javascript
 				</div>
-				<div id='detail'>
+				<div id="detail">
 					<p>This is an adaptation of a simple exercise based on Interactive Data Visualization e-book.</p>
 				</div>
 			</div>
-			<div id='main'>
-				<script rel='javascript'>
-					var dataset = [5, 10, 15, 20, 25, 30];
-					d3.select("div #main").selectAll("div")
-						.data(dataset)
-						.enter()
-						.append("div")
-						.text(function(d) {
-							return "Counting up to " + d;
-						});
-				</script>
+			<div id="main">
+				<!--javascript generated result outputs here-->
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		var dataset = [];
+		for (i = 0; i < 15; i++) {
+			newNumber = Math.floor(Math.random() * 100);
+			dataset.push(newNumber);
+		}
+		d3.select("div #main").selectAll("div")
+			.data(dataset)
+			.enter()
+			.append("div")
+			.text(function(d) {
+				return "Random number: " + d;
+			});
+	</script>
 </body>
 </html>
