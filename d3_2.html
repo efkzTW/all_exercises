@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-	<meta charset='utf-8' />
-	<link rel='stylesheet' href='css/ex_primary.css' />
-	<link rel='stylesheet' href='css/d3_2.css' />
-	<script type='text/javascript' src='js/d3.v3.js'></script>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/ex_primary.css" />
+	<link rel="stylesheet" href="css/d3_2.css" />
+	<script src="js/d3.v3.js"></script>
 	<title>d3.js - Simple Bar Chart</title>
 </head>
 <body>
-	<div id='page-wrapper'>
-		<div id='content'>
-			<div id='header'>
-				<div id='project-name'>
-					Project 3: Simple Bar Chart
+	<div id="page-wrapper">
+		<div id="content">
+			<div id="header">
+				<div id="ex-name">
+					Simple Bar Chart
 				</div>
-				<div id='detail'>
-					<p>Continuing from the previous <a href='d3_1.html'>project</a>, it uses simple data to generate static bar chart. However, data will be generated randomly upon each script load.</p>
+				<div id="detail">
+					<p>Continuing from the previous <a href="d3_1.html">project</a>, it uses simple data to generate static bar chart. However, data will be generated randomly upon each script load.</p>
 				</div>
 			</div>
 			<div id="main" class="min-height">
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript">
+	<script>
 		var dataset = data=[];
 		for (var i = 0; i < 25; i ++) {
 			newNumber = Math.floor(Math.random() * 20);
