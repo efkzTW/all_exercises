@@ -18,7 +18,7 @@
 					<p>Continuing from the previous <a href='project_2.html'>project</a>, it uses simple data to generate static bar chart. However, data will be generated randomly upon each script load.</p>
 				</div>
 			</div>
-			<div id="main">
+			<div id="main" class="min-height">
 				<!--javascript generated chart output here-->
 			</div>
 		</div>
@@ -35,11 +35,12 @@
 			.data(dataset)
 			.enter()
 			.append("div")
-			.attr("class","p3_bar")
+			.attr("class","bar")
 			.style("height",function(d){
 				var barHeight = d*10;
 				return barHeight + "px";
-			});
+			}
+			);
 
 	</script>
 
