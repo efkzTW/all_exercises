@@ -1,0 +1,14 @@
+.bar {
+	display: inline-block;
+	width: 15px;
+	background-color: #00868B;
+	margin-right: 2px;
+}
+
+.min-height {
+	height: 150px;
+}
+
+.text-highlight {
+	color: #ff3900;
+}

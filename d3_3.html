@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/ex_primary.css" />
+	<link rel="stylesheet" href="css/d3_3.css" />
+	<script src="js/d3.v3.js"></script>
+	<title>d3.js - Drawing SVG</title>
+</head>
+<body>
+	<div id="page-wrapper">
+		<div id="content">
+			<div id="header">
+				<div id="ex-name">
+					Drawing with SVG
+				</div>
+				<div id="detail">
+					<p>This exercise uses SVG to draw circles. First, we must create the SVG element in which the circles will be placed in. The empty SVG element takes <span class="text-highlight">"width"</span> and <span class="text-highlight">"height"</span> properties to define its area. It is then appended to a specified HTML element for which itself and the shapes will be created. cx, cy, and r are used to define the basic attributes about the circles. <span class="text-highlight">cx</span> and <span class="text-highlight">cy</span> defines the center position of the circle within the SVG element. <span class="text-highlight">r</span> is the circle radius. Other attributes displayed in this exercise includes "fill" (yellow), "stroke" (orange), and "stroke-width".
+					</p> 
+				</div>
+			</div>
+			<div id="main" class="min-height">
+				<!--javascript generated chart output here-->
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var dataset = [5, 10, 15, 20, 25];
+		var w = 940;
+		var h = 150;
+		var svg = d3.select("div #main")
+			.append("svg")
+			.attr("width", w)
+			.attr("height",h);
+
+		var circles = svg.selectAll("circle")
+						.data(dataset)
+						.enter()
+						.append("circle");
+
+		circles.attr("cx", function(d, i) {
+					return (2*i * 50) + 25;
+				})
+				.attr("cy", h/2)
+				.attr("r", function(d) {
+					return 2*d;
+				})
+				.attr("fill", "yellow")
+				.attr("stroke", "orange")
+				.attr("stroke-width", function(d) {
+					return d/2;
+				});
+	</script>
+
+</body>
+
+</html>
