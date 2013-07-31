@@ -32,4 +32,5 @@ body {
 #main {
 	background-color: #d4c791;
 	padding: 10px 10px;
+	border: solid 1px;
 }
