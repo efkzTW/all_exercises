@@ -7,6 +7,7 @@ blockquote {
 	border: dotted 1px;
 	padding: 1px 5px;
 	font-size: 1.2em;
+	margin-top: 0px;
 }
 
 .bar {
