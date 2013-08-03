@@ -28,37 +28,36 @@
 			<div id="linear" class="example">
 				<!--javascript output goes here-->
 			</div>
+			<h5>Linear Scale, with inverted scale and padding</h5>
+				<div class="info">
+					I then improve on the example above by reversing the (svg) scale so that it conforms to the regular xy-scale format. Also, dynamic padding is implemented so the texts will will stay within the defined svg boundary.
+				</div>
+			<div id="linear-2" class="example">
+				<!--javascript output goes here-->
+			</div>
 		</div>
 	</div>
 
 	<script>
-		//Linear Scale example
+		//Shared functions
 		function randNum(min, max) {
 			return Math.floor(Math.random() * (max-min + 1)) + min;
 		}
 
-		function findxMinMax(dataset) {
+		function findMinMax(dataset, xy) {
 			var max = d3.max(dataset,function(d) {
-						return d[0];
+						return d[xy];
 			});
 			var min = d3.min(dataset,function(d) {
-						return d[0];
+						return d[xy];
 			});
-			return [min, max]
+			return [min, max];
 		}
 
-		function findyMinMax(dataset) {
-		var max = d3.max(dataset,function(d) {
-					return d[1];
-		});
-		var min = d3.min(dataset,function(d) {
-					return d[1];
-		});
-		return [min, max]
-		}
+		//Linear Scale example
 
 		var dataset = [];
-		for (var i=0; i < 8; i++){
+		for (var i=0; i < 5; i++){
 			var xMax = randNum(1000,1500);
 			var yMax = randNum(500,1000);
 			dataset.push([xMax,yMax]);
@@ -74,11 +73,11 @@
 						});
 
 		var xScale = d3.scale.linear()
-					.domain([findxMinMax(dataset)[0], findxMinMax(dataset)[1]])
+					.domain([findMinMax(dataset, 0)[0], findMinMax(dataset, 0)[1]])
 					.range([10, w - 50]);
 
 		var yScale = d3.scale.linear()
-					.domain([findyMinMax(dataset)[0], findyMinMax(dataset)[1]])
+					.domain([findMinMax(dataset, 1)[0], findMinMax(dataset, 1)[1]])
 					.range([5, h - 10]);
 
 		svg_linear.selectAll("circle")
@@ -86,23 +85,64 @@
 				.enter()
 				.append("circle")
 				.attr({
-					cx: function(d) {return xScale(d[0])},
-					cy: function(d) {return yScale(d[1])},
+					cx: function(d) {return xScale(d[0]);},
+					cy: function(d) {return yScale(d[1]);},
 					r: 2
-				})
+				});
+
 		svg_linear.selectAll("text")
 				.data(dataset)
 				.enter()
 				.append("text")
 				.text(function(d){return "["+d[0]+","+d[1]+"]";})
 				.attr({
-					x: function(d) {return xScale(d[0])},
-					y: function(d) {return yScale(d[1])+15},
-					"text-anchor": "middle",
+					x: function(d) {return xScale(d[0]);},
+					y: function(d) {return yScale(d[1])+15;},
 					"font-family": "sans-serif",
 					"font-size": "0.7em",
 					"fill": "blue"
-				})
+				});
+		// Linear Scale-2 example
+		// Will use the same data set as the first example to emphasize the visual improvements
+		
+		svg_linear2 = d3.select("div #linear-2")
+						.append("svg")
+						.attr({
+							width: w,
+							height: h
+						});
+		var x_pad = 20;
+		var y_pad = 10;
+		var rev_xScale = d3.scale.linear()
+						.domain([findMinMax(dataset,0)[0], findMinMax(dataset,0)[1]])
+						.range([x_pad, w - x_pad * 3]);
+
+		var rev_yScale = d3.scale.linear()
+						.domain([findMinMax(dataset,1)[0], findMinMax(dataset,1)[1]])
+						.range([h - y_pad * 2, y_pad]);
+
+		svg_linear2.selectAll("circle")
+					.data(dataset)
+					.enter()
+					.append("circle")
+					.attr({
+						cx: function(d) {return rev_xScale(d[0]);},
+						cy: function(d) {return rev_yScale(d[1]);},
+						r: 2
+					});
+
+		svg_linear2.selectAll("text")
+					.data(dataset)
+					.enter()
+					.append("text")
+					.text(function(d){return "[" + d[0] +","+d[1]+"]";})
+					.attr({
+						x: function(d){return rev_xScale(d[0]);},
+						y: function(d){return rev_yScale(d[1]) + 15;},
+						"font-size":"0.7em",
+						"font-family":"sans-serif",
+						"fill":"blue"
+					});
 
 	</script>
 
